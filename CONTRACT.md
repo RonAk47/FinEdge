@@ -19,14 +19,14 @@ remove(id)        // -> true if removed, false if not found
 - Start by instantiating `InMemoryRepository` (`src/services/InMemoryRepository.js`)
   for your own entity. It already implements this interface, backed by a
   plain array — nothing to build, just import and use.
-- Person 3 builds the real `fs/promises`-backed repository against the exact
+- Ronak builds the real `fs/promises`-backed repository against the exact
   same interface. At integration time, swap the import — no other code changes.
 
 Example (in a service file):
 ```js
 const InMemoryRepository = require('./InMemoryRepository');
 const transactionRepo = new InMemoryRepository();
-// later, once Person 3's real one lands:
+// later, once Ronak's real one lands:
 // const transactionRepo = require('./transaction.repository');
 ```
 

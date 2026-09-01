@@ -1,7 +1,7 @@
 /**
  * Generic in-memory repository. Each person instantiates one of these for
  * their own entity (see CONTRACT.md) so nobody is blocked waiting on the
- * real fs/promises persistence layer. Person 3's real repository must
+ * real fs/promises persistence layer. Ronak's real repository must
  * expose these exact same five async methods, so swapping it in later is a
  * one-line import change — no controller/service code changes needed.
  */

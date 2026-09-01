@@ -1,5 +1,5 @@
 /**
- * Shape reference only (not enforced at runtime here) — Person 1 owns this.
+ * Shape reference only (not enforced at runtime here) — Ahsas owns this.
  * {
  *   id: string,
  *   name: string,

@@ -35,10 +35,10 @@ builds against so no one is blocked on anyone else.
 
 | Person | Owns |
 |---|---|
-| 1 | Project setup, `User` model, `POST /users`, mock JWT session middleware |
-| 2 | `Transaction` model, all `/transactions` CRUD endpoints, input validation middleware |
-| 3 | Global error handling, custom error classes, request logging, real `fs/promises` persistence layer |
-| 4 | `Budget` model, `GET /summary`, in-memory TTL cache, one bonus feature |
+| Ahsas | Project setup, `User` model, `POST /users`, mock JWT session middleware |
+| Shiva | `Transaction` model, all `/transactions` CRUD endpoints, input validation middleware |
+| Ronak | Global error handling, custom error classes, request logging, real `fs/promises` persistence layer |
+| Bhuvnesh | `Budget` model, `GET /summary`, in-memory TTL cache, one bonus feature |
 
 ## API endpoints
 
