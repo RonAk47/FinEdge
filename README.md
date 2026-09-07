@@ -58,5 +58,12 @@ builds against so no one is blocked on anyone else.
 npm test
 ```
 
+## Persistence handoff
+
+Entity services should import their file-backed repository from
+`src/services/{entity}.repository.js`. The adapters share the same five-method
+interface as `InMemoryRepository`, so controllers and business logic do not
+need persistence-specific changes.
+
 ## Environment variables
 See `.env.example`.
