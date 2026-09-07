@@ -16,19 +16,26 @@ update(id, data)  // -> updated item or null if not found
 remove(id)        // -> true if removed, false if not found
 ```
 
-- Start by instantiating `InMemoryRepository` (`src/services/InMemoryRepository.js`)
-  for your own entity. It already implements this interface, backed by a
-  plain array — nothing to build, just import and use.
+- The production repositories are backed by JSON files through
+  `src/services/FileRepository.js`. Use the entity-specific adapters when your
+  service is ready:
+  - `src/services/user.repository.js`
+  - `src/services/transaction.repository.js`
+  - `src/services/budget.repository.js`
+- `InMemoryRepository` (`src/services/InMemoryRepository.js`) remains available
+  for isolated unit tests. It implements the same interface in memory.
 - Ronak builds the real `fs/promises`-backed repository against the exact
   same interface. At integration time, swap the import — no other code changes.
 
 Example (in a service file):
 ```js
-const InMemoryRepository = require('./InMemoryRepository');
-const transactionRepo = new InMemoryRepository();
-// later, once Ronak's real one lands:
-// const transactionRepo = require('./transaction.repository');
+const transactionRepo = require('./transaction.repository');
 ```
+
+The file repositories store arrays in `data/users.json`,
+`data/transactions.json`, and `data/budgets.json`. Missing files are treated as
+empty repositories and are created automatically on the first write. Writes
+are atomic and serialized per file.
 
 ## Response shape
 
