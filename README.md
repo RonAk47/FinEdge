@@ -46,6 +46,8 @@ builds against so no one is blocked on anyone else.
 |---|---|---|
 | GET | `/api/health` | Server health check |
 | POST | `/api/users` | Register new user |
+| POST | `/api/users/login` | Log in, returns a mock JWT |
+| GET | `/api/users/me` | Current user (requires `Authorization: Bearer <token>`) |
 | POST | `/api/transactions` | Add income/expense |
 | GET | `/api/transactions` | Fetch all transactions |
 | GET | `/api/transactions/:id` | View single transaction |
