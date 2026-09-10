@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "userId": "user-1",
+    "type": "expense",
+    "category": "Travel",
+    "amount": 250,
+    "date": "2026-09-10",
+    "createdAt": "2026-09-10T11:59:44.029Z",
+    "id": "d932e526-be0a-49d3-a53c-20f91031d397"
+  }
+]
