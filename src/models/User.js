@@ -1,5 +1,5 @@
 /**
- * User shape (see CONTRACT.md — field names are agreed across the team):
+ * User shape defined by CONTRACT.md:
  * {
  *   id: string,
  *   name: string,
