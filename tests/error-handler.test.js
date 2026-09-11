@@ -46,6 +46,21 @@ describe('global error handling', () => {
         });
     });
 
+    it('returns a 400 for a malformed JSON body', async () => {
+        const response = await request(app)
+            .post('/api/users')
+            .set('Content-Type', 'application/json')
+            .send('{bad');
+
+        expect(response.statusCode).toBe(400);
+        expect(response.body).toEqual({
+            success: false,
+            error: {
+                message: 'Malformed JSON body'
+            }
+        });
+    });
+
     it('formats validation errors with their status and details', async () => {
         const details = [{ field: 'amount', message: 'Amount is required' }];
         const testApp = createErrorApp(

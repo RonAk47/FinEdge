@@ -8,6 +8,11 @@ const config = require('../config');
  */
 // eslint-disable-next-line no-unused-vars
 const errorHandler = (err, req, res, next) => {
+  // express.json() parse failures are malformed client input, not server faults.
+  if (err.type === 'entity.parse.failed') {
+    return failure(res, 'Malformed JSON body', 400);
+  }
+
   const statusCode = err.isOperational ? err.statusCode : 500;
   const message = err.isOperational ? err.message : 'Internal server error';
 
