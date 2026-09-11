@@ -67,6 +67,16 @@
           "name": "Register user",
           "event": [
             {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "// Seed a unique email so the collection can be re-run without hitting 409.",
+                  "pm.collectionVariables.set('email', 'demo' + Date.now() + '@example.com');"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
               "listen": "test",
               "script": {
                 "exec": [
