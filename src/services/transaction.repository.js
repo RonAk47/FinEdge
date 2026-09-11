@@ -1,6 +1,7 @@
 const path = require('path');
+const config = require('../config');
 const FileRepository = require('./FileRepository');
 
 module.exports = new FileRepository(
-  path.join(__dirname, '../../data/transactions.json')
+    path.join(config.dataDir, 'transactions.json')
 );
