@@ -1,5 +1,5 @@
 /**
- * Shape reference only (not enforced at runtime here) — Person 1 owns this.
+ * User shape defined by CONTRACT.md:
  * {
  *   id: string,
  *   name: string,
@@ -9,4 +9,8 @@
  *   createdAt: string (ISO date)
  * }
  */
-module.exports = {};
+
+// Strips passwordHash so it can never leak through a response.
+const toPublicUser = ({ passwordHash, ...user }) => user;
+
+module.exports = { toPublicUser };
